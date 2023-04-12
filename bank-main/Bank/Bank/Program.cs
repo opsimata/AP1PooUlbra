@@ -50,6 +50,7 @@ namespace Bank
             //General.Print("CEO new wage: $" + director.Salary);
             #endregion
 
+            #region
             CalcBonus();
 
             void CalcBonus()
@@ -75,9 +76,11 @@ namespace Bank
 
                 General.Print("Total bonuses: $" + manager.BonusesTotal);
             }
+            #endregion
 
             General.Linebreak();
 
+            #region
             UseLoginSystem();
 
             void UseLoginSystem()
@@ -109,8 +112,13 @@ namespace Bank
                 system.Login(accountManager02, "674", "Donald");
                 General.Linebreak();
             }
+            #endregion
 
             General.Linebreak();
+
+            #region
+
+            #endregion
 
             Console.Write("Press any key to close...");
             Console.ReadLine();
