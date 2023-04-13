@@ -1,5 +1,4 @@
 ﻿using Bank.Client;
-using Bank.Utilitaries;
 
 namespace Bank.Accounts
 {
@@ -22,20 +21,20 @@ namespace Bank.Accounts
         public string AccountNumber { get; set; }
         public AccountHolder AccountHolder { get; set; }
 
-        private double AccountBalance;
+        private double AccountBalance = 5000;
+
+        public void PrintData()
+        {
+            Console.WriteLine("Client: " + AccountHolder.Name);
+            Console.WriteLine("Client ID: " + AccountHolder.ID);
+            Console.WriteLine("Client profession: " + AccountHolder.Profession);
+            Console.WriteLine("Account number: " + AccountNumber);
+            Console.WriteLine("Agency number: " + agencyNumber);
+            Console.WriteLine("Balance: $" + this.AccountBalance);
+        }
         public void Deposit(double value)
         {
             this.AccountBalance += value;
-        }
-
-        public void PrintClientData()
-        {
-            General.Print("Client: " + AccountHolder.Name);
-            General.Print("Client ID: " + AccountHolder.ID);
-            General.Print("Client profession: " + AccountHolder.Profession);
-            General.Print("Account number: " + AccountNumber);
-            General.Print("Agency number: " + agencyNumber);
-            General.Print("Balance: $" + this.AccountBalance);
         }
 
         public bool Withdraw(double value)
@@ -83,14 +82,10 @@ namespace Bank.Accounts
             return this.AccountBalance;
         }
 
-        public Account(int agencyNumber, string accountNumber, string accountHolder, double accountBalance, string accountHolderName, string accountHolderID, string accountHolderProfession)
+        public Account(int agencyNumber, string accountNumber)
         {
-            this.AccountHolder.Name = accountHolderName;
-            this.AccountHolder.ID = accountHolderID;
-            this.AccountHolder.Profession = accountHolderProfession;
             this.AgencyNumber = agencyNumber;
             this.AccountNumber = accountNumber;
-            this.AccountBalance = accountBalance;
 
             TotalAccounts++;
         }
