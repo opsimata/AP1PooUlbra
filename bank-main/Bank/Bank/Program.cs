@@ -16,6 +16,9 @@ namespace Bank
 
             void CalcBonus()
             {
+                General.Linebreak();
+                General.Print("--------------------------------------------------");
+                General.Linebreak();
                 General.Print("Bank Employees Data: ");
                 General.Linebreak();
 
@@ -77,6 +80,8 @@ namespace Bank
 
             void UseLoginSystem()
             {
+                General.Print("Login Validation for the CEO and the Accounts Manager: ");
+                General.Linebreak();
                 LoginSystem system = new LoginSystem();
 
                 CEO director02 = new CEO("074.801.374-16");
@@ -151,12 +156,12 @@ namespace Bank
             //Exemplo transferencia:
             #region
             General.Print("Example of a $2000 transfer from Account 02 to Account 01:");
-            General.Print("Account 01 balance before the transfer: $" + account01.GetBalance());
             General.Print("Account 02 balance before the transfer: $" + account02.GetBalance());
+            General.Print("Account 01 balance before the transfer: $" + account01.GetBalance());
             account02.Transfer(2000, account01);
             General.Linebreak();
-            General.Print("Account 01 balance after the transfer: $" + account01.GetBalance());
             General.Print("Account 02 balance after the transfer: $" + account02.GetBalance());
+            General.Print("Account 01 balance after the transfer: $" + account01.GetBalance());
             General.Linebreak();
             General.Print("--------------------------------------------------");
             General.Linebreak();
